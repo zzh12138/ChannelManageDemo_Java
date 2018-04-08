@@ -105,7 +105,9 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             public void onClick(View v) {
                 if (holder.getLayoutPosition() < selectedSize + 1) {
                     //tab上面的 点击移除
-                    removeFromSelected(holder);
+                     if (holder.getLayoutPosition() > fixSize) {
+                        removeFromSelected(holder);
+                    }
                 } else {
                     //tab下面的 点击添加到已选频道
                     selectedSize++;
